@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 10:35:14 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/11 10:35:15 by gtaggana         ###   ########.fr       */
+/*   Created: 2021/10/05 11:49:32 by gtaggana          #+#    #+#             */
+/*   Updated: 2021/10/11 10:31:24 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	*ft_memset(void	*s, int	c, size_t n)
 {
-	if (ft_islower(c))
-		c = c - 32;
-	return (c);
+	int	k;
+
+	k = (int)n;
+	while (k >= 0)
+	{
+		*((unsigned char *)(s + k)) = (char)c;
+		k--;
+	}
+	return ((void *)s);
 }

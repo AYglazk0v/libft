@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 10:35:14 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/11 10:35:15 by gtaggana         ###   ########.fr       */
+/*   Created: 2021/10/05 12:03:16 by gtaggana          #+#    #+#             */
+/*   Updated: 2021/10/11 11:10:14 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_bzero(void	*s, size_t	n)
 {
-	if (ft_islower(c))
-		c = c - 32;
-	return (c);
+	unsigned char	*arr;
+	size_t			i;
+
+	arr = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		arr[i] = '\0';
+		i++;
+	}
 }

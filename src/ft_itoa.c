@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/11 10:29:08 by gtaggana          #+#    #+#             */
+/*   Updated: 2021/10/11 10:40:51 by gtaggana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static void	ft_int2char(long int n, char *str, int len)
@@ -40,7 +52,7 @@ static int	ft_size_int(long int n)
 char	*ft_itoa(int n)
 {
 	char		*str;
-	int		len;
+	int			len;
 
 	len = ft_size_int(n);
 	str = malloc(sizeof(char *) * (len + 1));

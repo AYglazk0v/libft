@@ -61,5 +61,11 @@ $(NAME):
 clean:
 				rm -rf $(OBJ_NAME)
 fclean:	
-				clean
+				rm -rf $(OBJ_NAME)
 				rm -f $(NAME)
+re:
+				rm -rf $(OBJ_NAME)
+				rm -f $(NAME)
+				gcc $(CFLAGS) -c $(SRC) -I$(HEADER)
+				ar rc $(NAME) $(OBJ_NAME)
+				ranlib $(NAME)
