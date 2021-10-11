@@ -46,11 +46,11 @@ CFLAGS		=	-Wall -Wextra -Werror
 .SILENT:
 all: $(NAME)
 $(NAME):
-			gcc $(CFLAGS) -c $(SRC) -I$(HEADER)
-			ar rc $(NAME) $(OBJ_NAME)
-			ranlib $(NAME)
+				gcc $(CFLAGS) -c $(SRC) -I$(HEADER)
+				ar rc $(NAME) $(OBJ_NAME)
+				ranlib $(NAME)
 clean:
-	rm -rf $(OBJ_NAME)
+				rm -rf $(OBJ_NAME)
 fclean:	
-	clean
-	rm -f $(NAME)
+				clean
+				rm -f $(NAME)
