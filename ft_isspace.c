@@ -1,3 +1,5 @@
+#include "libft.h"
+
 int	ft_isspace(int c)
 {
 	if ((c == '\f' || c == '\n' || c == '\r'

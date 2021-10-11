@@ -1,3 +1,5 @@
+#include "libft.h"
+
 static char	**ft_clear(char **tab)
 {
 	unsigned int	i;

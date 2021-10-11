@@ -1,4 +1,6 @@
-size_t	ft_strlcat(char	*dst, const char	*src, size_t size)
+#include "libft.h"
+
+size_t	ft_strlcat(char	*dst, const char *src, size_t size)
 {
 	int	size_dst;
 	int	pt_dst_src;

@@ -1,3 +1,5 @@
+#include "libft.h"
+
 static void	ft_int2char(long int n, char *str, int len)
 {
 	int	k;

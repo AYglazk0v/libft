@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char	*ft_strrchr(const char *string, int c)
 {
 	char	*str_tmp;
