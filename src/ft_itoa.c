@@ -39,8 +39,7 @@ static int	ft_size_int(long int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	char	*tmp;
+	char		*str;
 	int		len;
 
 	len = ft_size_int(n);

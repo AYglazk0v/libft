@@ -2,11 +2,11 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (!dst && !src)
-		return (dst);
+	if (!dest && !src)
+		return (dest);
 	if (dest < src)
 	{
 		while (i < n)

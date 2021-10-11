@@ -2,8 +2,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
-	int	l_haystack;
+	size_t	i;
+	size_t	l_haystack;
 
 	l_haystack = ft_strlen(haystack);
 	if (!*needle)

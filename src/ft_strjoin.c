@@ -7,7 +7,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	if (!(s1 && s2))
-		reutn ((void *)0);
+		return ((void *)0);
 	join = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (join == NULL)
 		return ((void *)0);

@@ -19,7 +19,7 @@ int	ft_atoi(const char *str)
 		str++;
 		if ((num >= __LONG_MAX__) && sign > 0)
 			return (-1);
-		if (num >= (__LONG_MAX__ + 1) && sign < 0)
+		if ((num > __LONG_MAX__) && sign < 0)
 			return (0);
 	}
 	return (sign * (int)num);

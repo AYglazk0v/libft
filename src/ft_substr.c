@@ -11,7 +11,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub = malloc(sizeof(char) * (len + 1));
 	if (sub == NULL)
 		return ((void *)0);
-	if (ft_strlen(s) < start)
+	if ((unsigned int)ft_strlen(s) < start)
 	{
 		sub[0] = '\0';
 		return (sub);
