@@ -48,16 +48,15 @@ SRC_NAME	=	ft_isalpha.c \
 				ft_lstmap_bonus.c
 
 OBJ_NAME	=	$(SRC_NAME:.c=.o)
-SRC			=	$(addprefix $(SRC_PATH),$(SRC_NAME))
+SRC			=	$(addprefix $(SRC_PATH),$(SRC_NAME))$?
 HEADER		=	./inc/
 CFLAGS		=	-Wall -Wextra -Werror
 
 .SILENT:
 all: $(NAME)
 $(NAME):
-				gcc $(CFLAGS) -c $(SRC) -I$(HEADER)
+				gcc $(CFLAGS) -c $(SRC) -I$(HEADER)$?
 				ar rc $(NAME) $(OBJ_NAME)
-				ranlib $(NAME)
 clean:
 				rm -rf $(OBJ_NAME)
 fclean:	
@@ -68,4 +67,3 @@ re:
 				rm -f $(NAME)
 				gcc $(CFLAGS) -c $(SRC) -I$(HEADER)
 				ar rc $(NAME) $(OBJ_NAME)
-				ranlib $(NAME)

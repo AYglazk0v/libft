@@ -6,7 +6,7 @@
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:32:36 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/11 10:32:38 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/10/11 23:36:40 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	if (s && f)
 	{
-		i = 0;
-		while (s[i++] != '\0')
+		i = -1;
+		while (s[++i] != '\0')
 			f(i, &s[i]);
 	}
 }

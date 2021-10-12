@@ -6,7 +6,7 @@
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:30:38 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/11 10:30:39 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/10/12 02:35:02 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
-	i = 1;
 	if (!lst)
 		return (0);
+	i = 1;
 	while (lst->next)
 	{
 		lst = lst->next;

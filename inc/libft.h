@@ -6,7 +6,7 @@
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:41:18 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/11 10:41:21 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/10/12 02:44:36 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,8 @@ int		ft_toupper(int c);
 typedef struct s_list
 {
 	void			*content;
-	size_t			content_size;
 	struct s_list	*next;
-}					t_list;
+}				t_list;
 
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);

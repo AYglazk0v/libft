@@ -6,7 +6,7 @@
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:31:49 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/11 10:31:50 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/10/11 23:30:34 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		num *= -1;
 	}
-	if (num >= 9)
+	if (num >= 10)
 		ft_putnbr_fd(num / 10, fd);
 	ft_putchar_fd((num % 10) + '0', fd);
 }

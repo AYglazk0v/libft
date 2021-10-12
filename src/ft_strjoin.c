@@ -6,7 +6,7 @@
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:32:46 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/11 10:32:47 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/10/11 23:34:17 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		join[i] = *s1;
 		s1++;
+		i++;
 	}
 	while (*s2)
 	{
 		join[i] = *s2;
+		i++;
 		s2++;
 	}
 	join[i] = '\0';

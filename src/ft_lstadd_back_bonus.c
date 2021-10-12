@@ -6,7 +6,7 @@
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:29:18 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/11 10:29:20 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/10/12 03:15:30 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	if (lst && new)
+	while ((*lst)->next)
 	{
-		while ((*lst)->next)
-		{
-			*lst = (*lst)->next;
-		}
-		*lst = new;
+		*lst = (*lst)->next;
 	}
+	(*lst)->next = new;
 }

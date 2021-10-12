@@ -6,7 +6,7 @@
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:29:08 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/11 10:40:51 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/10/12 02:13:37 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	ft_int2char(long int n, char *str, int len)
 	str[len--] = '\0';
 	while (len >= k)
 	{
-		str[len--] = (n % 10) + '0';
+		str[len--] = (int)(n % 10) + '0';
 		n /= 10;
 	}
 }
@@ -55,9 +55,9 @@ char	*ft_itoa(int n)
 	int			len;
 
 	len = ft_size_int(n);
-	str = malloc(sizeof(char *) * (len + 1));
+	str = malloc(sizeof(char *) * (len));
 	if (str == NULL)
 		return ((void *)0);
-	ft_int2char(n, str, len);
+	ft_int2char((long int)n, str, len);
 	return (str);
 }
