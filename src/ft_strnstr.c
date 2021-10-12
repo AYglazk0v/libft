@@ -6,7 +6,7 @@
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:34:20 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/12 03:38:14 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/10/12 05:14:08 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,28 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
-	size_t	l_haystack;
+	int	i;
+	int	count;
 
-	if (!len || !(*haystack))
-		return ((void *)0);
 	if (!*needle)
 		return ((char *)haystack);
-	l_haystack = ft_strlen(haystack);
-	while (l_haystack > len && *haystack)
+	if (!len || !(*haystack))
+		return ((void *)0);
+	i = 0;
+	count = 0;
+	while (i + count <= (int)len && haystack[count])
 	{
 		i = 0;
-		if (*haystack == needle[0])
+		if (haystack[count] == needle[0])
 		{
-			while (*needle && needle[i] == haystack[i])
+			while (needle[i] && needle[i] == haystack[count + i] && i + count < (int)len)
 				i++;
 			if (needle[i] == '\0')
-				return ((char *)haystack);
-			haystack += (i - 1);
-			l_haystack -= (i - 2);
-		}
-		haystack++;
+				return (&((char *)haystack)[count]);
+			}
+		if(!i)
+			count += i + 1;
+		count++;
 	}
 	return ((void *)0);
 }
