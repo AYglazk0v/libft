@@ -53,7 +53,7 @@ HEADER		=	./inc/
 CFLAGS		=	-Wall -Wextra -Werror
 
 .SILENT:
-.PHONY: all clean fclean re
+.PHONY: 		all clean fclean re
 all: $(NAME)
 $(NAME):
 				gcc $(CFLAGS) -c $(SRC) -I$(HEADER)$?
