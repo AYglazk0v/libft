@@ -1,15 +1,5 @@
 NAME 		=	 libft.a
-SRC_PATH	=	./src/
 SRC_NAME	=	ft_isalpha.c \
-				ft_lstsize.c \
-				ft_lstnew.c \
-				ft_lstmap.c \
-				ft_lstlast.c\
-				ft_lstiter.c \
-				ft_lstdelone.c \
-				ft_lstclear.c \
-				ft_lstadd_front.c \
-				ft_lstadd_back.c \
 				ft_isdigit.c \
 				ft_isalnum.c \
 				ft_isascii.c \
@@ -46,7 +36,9 @@ SRC_NAME	=	ft_isalpha.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
-				#ft_lstnew_bonus.c \
+				
+		
+SRC_BONUS	=	ft_lstnew_bonus.c \
 				ft_lstadd_front_bonus.c \
 				ft_lstsize_bonus.c \
 				ft_lstlast_bonus.c \
@@ -56,24 +48,28 @@ SRC_NAME	=	ft_isalpha.c \
 				ft_lstiter_bonus.c \
 				ft_lstmap_bonus.c
 
+OBJ_BONUS	=	$(SRC_BONUS:.c=.o)
 OBJ_NAME	=	$(SRC_NAME:.c=.o)
-SRC			=	$(addprefix $(SRC_PATH),$(SRC_NAME))$?
-HEADER		=	./inc/
 CFLAGS		=	-Wall -Wextra -Werror
 
-.SILENT:
-.PHONY: 		all clean fclean re
-all: $(NAME)
-$(NAME):
-				gcc $(CFLAGS) -c $(SRC) -I$(HEADER)$?
+.PHONY: 		clean fclean re bonus
+all:	$(NAME)
+$(NAME): libft.h
+				gcc $(CFLAGS) -c $(SRC_NAME)
 				ar rc $(NAME) $(OBJ_NAME)
 clean:
 				rm -rf $(OBJ_NAME)
+				rm -rf $(OBJ_BONUS)
 fclean:	
 				rm -rf $(OBJ_NAME)
+				rm -rf $(OBJ_BONUS)
 				rm -f $(NAME)
 re:
 				rm -rf $(OBJ_NAME)
+				rm -rf $(OBJ_BONUS)
 				rm -f $(NAME)
-				gcc $(CFLAGS) -c $(SRC) -I$(HEADER)
+				gcc $(CFLAGS) -c $(SRC_NAME)
 				ar rc $(NAME) $(OBJ_NAME)
+bonus: libft.h		
+				gcc $(CFLAGS) -c $(SRC_BONUS)
+				ar rc $(NAME) $(OBJ_BONUS)
