@@ -6,7 +6,7 @@
 /*   By: gtaggana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:41:18 by gtaggana          #+#    #+#             */
-/*   Updated: 2021/10/12 02:44:36 by gtaggana         ###   ########.fr       */
+/*   Updated: 2021/10/26 19:12:37 by gtaggana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 # include <string.h>
 
 char	*ft_strdup(const char *str);
-int		ft_strlen(const char	*s);
-void	*ft_memset(void	*s, int	c, size_t n);
+int		ft_strlen(const char *s);
+void	*ft_memset(void	*s, int c, size_t n);
 void	*ft_memcpy(void	*dst, const void *src, size_t	n);
-int		ft_isprint(int	c);
+int		ft_isprint(int c);
 int		ft_isdigit(int c);
 int		ft_isascii(int c);
-int		ft_isalpha(int	c);
-int		ft_isalnum(int	c);
-void	ft_bzero(void	*s, size_t	n);
+int		ft_isalpha(int c);
+int		ft_isalnum(int c);
+void	ft_bzero(void *s, size_t n);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_islower(int c);
