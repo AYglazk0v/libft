@@ -35,7 +35,7 @@ SRC_NAME	=	ft_isalpha.c \
 				ft_putchar_fd.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
-				ft_putnbr_fd.c \
+				ft_putnbr_fd.c 
 				
 		
 SRC_BONUS	=	ft_lstnew_bonus.c \
@@ -48,28 +48,29 @@ SRC_BONUS	=	ft_lstnew_bonus.c \
 				ft_lstiter_bonus.c \
 				ft_lstmap_bonus.c
 
-OBJ_BONUS	=	$(SRC_BONUS:.c=.o)
-OBJ_NAME	=	$(SRC_NAME:.c=.o)
+OBJ_NAME	=	${SRC_NAME:.c=.o}
+OBJ_BONUS	=	${SRC_BONUS:.c=.o}
 CFLAGS		=	-Wall -Wextra -Werror
+CC			=	gcc
+RM			= 	rm -f
 
-.PHONY: 		clean fclean re bonus
-all:	$(NAME)
-$(NAME): libft.h
-				gcc $(CFLAGS) -c $(SRC_NAME)
-				ar rc $(NAME) $(OBJ_NAME)
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+$(NAME): ${OBJ_NAME}
+				ar rcs ${NAME} ${OBJ_NAME}
+
+bonus:	${OBJ_NAME} ${OBJ_BONUS}	
+				ar rcs ${NAME} ${OBJ_NAME} ${OBJ_BONUS}
+
+.PHONY: 		all clean fclean re bonus
+
+all:	${NAME}
+
 clean:
-				rm -rf $(OBJ_NAME)
-				rm -rf $(OBJ_BONUS)
-fclean:	
-				rm -rf $(OBJ_NAME)
-				rm -rf $(OBJ_BONUS)
-				rm -f $(NAME)
-re:
-				rm -rf $(OBJ_NAME)
-				rm -rf $(OBJ_BONUS)
-				rm -f $(NAME)
-				gcc $(CFLAGS) -c $(SRC_NAME)
-				ar rc $(NAME) $(OBJ_NAME)
-bonus: libft.h		
-				gcc $(CFLAGS) -c $(SRC_BONUS)
-				ar rc $(NAME) $(OBJ_BONUS)
+				${RM} ${OBJ_NAME} ${OBJ_BONUS}
+
+fclean:	clean	
+				${RM} ${NAME}
+
+re: fclean all
